@@ -1,0 +1,12 @@
+@use './partials/variables' as *;
+
+// Bootstrap => npm installed
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+//Fonts => npm install (yet to install)
+
+
+//DEBUG
+body {
+    background-color: #d48f38;
+}
