@@ -1,18 +1,21 @@
 <script>
+import SingleCard from './SingleCard.vue';
 
 export default {
     name: 'CardsList',
+    components: {
+        SingleCard
+    }
 }
 
 </script>
 
 <template>
-    <section class="container bg-white">
-        <!-- Card esempio statica -->
-        <div class="text-center">
-            <img src="" alt="">
-            <h4>card text</h4>
-            <div>specie</div>
+    <section class="container bg-white p-5">
+
+        <div class="container">
+            <!-- Card esempio statica -->
+            <SingleCard />
         </div>
 
     </section>

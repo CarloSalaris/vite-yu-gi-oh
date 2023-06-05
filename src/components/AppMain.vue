@@ -14,9 +14,11 @@ export default {
 
 <template>
     <section class="container">
+        <!-- Dropdown section -->
         <div class="container">
             <DropDown />
         </div>
+        <!-- Cards section -->
         <CardsList />
     </section>
 </template>
