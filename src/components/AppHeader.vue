@@ -8,9 +8,9 @@ export default {
 </script>
 
 <template>
-    <header class="bg-white p-3 d-flex align-items-center">
+    <header class="bg-white px-3 d-flex align-items-center">
         <a href="#">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Yu-Gi-Oh%21_%28Logo%29.jpg" alt="Logo">
+            <img src="../../public/yu-gi-oh_logo.png" alt="Logo">
         </a>
         <h1>{{ message }}</h1>
     </header>
