@@ -3,7 +3,7 @@ import { store } from "./store.js";
 import axios from "axios";
 import AppHeader from './components/AppHeader.vue';
 import DropDown from './components/DropDown.vue';
-import AppMain from './components/AppMain.vue';
+import CardsList from './components/CardsList.vue';
 
 
 
@@ -11,7 +11,7 @@ export default {
   components: {
     AppHeader,
     DropDown,
-    AppMain
+    CardsList
   },
   data() {
     return {
@@ -60,7 +60,8 @@ export default {
     <DropDown @archSelected="getCards" />
   </div>
 
-  <AppMain />
+  <!-- Cards section -->
+  <CardsList />
 </template>
 
 <style lang="scss">
