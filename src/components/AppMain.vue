@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-    <section class="container">
+    <section class="container mb-5">
         <!-- Dropdown section -->
         <div class="container">
             <DropDown />
@@ -22,3 +22,5 @@ export default {
         <CardsList />
     </section>
 </template>
+
+<style lang="scss" scoped></style>
