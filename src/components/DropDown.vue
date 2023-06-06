@@ -6,6 +6,7 @@ export default {
     data() {
         return {
             store,
+            emptyString: "",
         }
     },
     methods: {
@@ -21,9 +22,12 @@ export default {
     <div class="dropdown">
         <button class="btn btn-secondary btn-sm dropdown-toggle my-3 bg-white text-black" type="button"
             data-bs-toggle="dropdown" aria-expanded="false">
-            Alien
+            Select archetype...
         </button>
         <ul class="dropdown-menu">
+            <li @click="archSelectFunc(this.emptyString)" @click.prevent="$emit('archSelected')"><a class=" dropdown-item"
+                    href="#">All</a>
+            </li>
             <li v-for="(item, idx) in store.archList" :key="idx" @click="archSelectFunc(item.archetype_name)"
                 @click.prevent="$emit('archSelected')">
                 <a class=" dropdown-item" href="#">{{ item.archetype_name
