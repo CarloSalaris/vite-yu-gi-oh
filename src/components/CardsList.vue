@@ -25,7 +25,9 @@ export default {
     <section class="container bg-white mb-5 p-5">
 
         <div class="row justify-center">
-            <div class="cardCounter p-2 text-white">Found {{ this.cardsNumber }} cards </div>
+            <div class="cardCounter p-2 text-white">Found {{ this.cardsNumber }} cards
+                <span v-if="store.archSelect !== ''">with archetype {{ store.archSelect }}</span>
+            </div>
 
             <!-- Cards -->
             <SingleCard v-for="singleCard in store.cardsList" :key="singleCard.id" :details="singleCard" />
