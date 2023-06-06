@@ -2,6 +2,7 @@
 import { store } from "./store.js";
 import axios from "axios";
 import AppHeader from './components/AppHeader.vue';
+import DropDown from './components/DropDown.vue';
 import AppMain from './components/AppMain.vue';
 
 
@@ -9,7 +10,8 @@ import AppMain from './components/AppMain.vue';
 export default {
   components: {
     AppHeader,
-    AppMain,
+    DropDown,
+    AppMain
   },
   data() {
     return {
@@ -26,10 +28,18 @@ export default {
         .catch(err => {
           console.log(err);
         })
+    },
+    archetypeList() {
+      axios.get(store.apiArchURL)
+        .then(res => {
+          store.archList = res.data
+          console.log(store.archList);
+        })
     }
   },
   created() {
     this.getCards();
+    this.archetypeList();
   }
 
 }
@@ -37,6 +47,12 @@ export default {
 
 <template>
   <AppHeader message="Yu-Gi-Oh Api" />
+
+  <!-- Dropdown section -->
+  <div class="container">
+    <DropDown />
+  </div>
+
   <AppMain />
 </template>
 

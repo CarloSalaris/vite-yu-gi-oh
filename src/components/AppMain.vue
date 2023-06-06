@@ -1,12 +1,10 @@
 <script>
 import CardsList from './CardsList.vue';
-import DropDown from './DropDown.vue';
 
 export default {
     name: 'AppMain',
     components: {
         CardsList,
-        DropDown,
     }
 }
 

@@ -1,7 +1,14 @@
 <script>
+import { store } from "../store.js";
 
 export default {
     name: 'DropDown',
+    data() {
+        return {
+            store,
+        }
+
+    }
 }
 
 </script>
@@ -13,11 +20,14 @@ export default {
             Alien
         </button>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li v-for="item in store.archList"><a class="dropdown-item" href="#">{{ item.archetype_name }}</a></li>
         </ul>
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.dropdown-menu {
+    max-height: 250px;
+    overflow: scroll;
+}
+</style>
