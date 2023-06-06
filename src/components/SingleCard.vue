@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-    <!-- Card esempio statica -->
+    <!-- Single Card -->
     <div class="text-center p-2 col-lg-2 col-md-3 col-sm-5">
         <div class="singleCard">
             <a href="#">
