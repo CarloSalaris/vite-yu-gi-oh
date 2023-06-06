@@ -20,7 +20,14 @@ export default {
   },
   methods: {
     getCards() {
-      axios.get(store.apiURL)
+      let myUrl = store.apiURL;
+
+      if (store.archSelect !== "") {
+        myUrl += `?archetype=${store.archSelect}` //Filter based on selected Archetype
+      } else {
+        myUrl += "?num=20&offset=0" //Filter just 20 elements
+      }
+      axios.get(myUrl)
         .then(res => {
           store.cardsList = res.data.data
           console.log(store.cardsList);
