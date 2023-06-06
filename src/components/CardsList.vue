@@ -19,8 +19,8 @@ export default {
 <template>
     <section class="container bg-white p-5">
 
-        <div class="row justify-content-between">
-            <div class="cardCounter px-1 py-2 mx-1 text-white">Found {{ store.cardsList.length }} cards </div>
+        <div class="row justify-center">
+            <div class="cardCounter p-2 text-white">Found {{ store.cardsList.length }} cards </div>
             <!-- Card esempio statica -->
             <SingleCard v-for="singleCard in store.cardsList" :key="singleCard.id" :details="singleCard" />
         </div>
