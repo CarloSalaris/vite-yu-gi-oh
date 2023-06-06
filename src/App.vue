@@ -57,7 +57,7 @@ export default {
 
   <!-- Dropdown section -->
   <div class="container">
-    <DropDown />
+    <DropDown @archSelected="getCards" />
   </div>
 
   <AppMain />

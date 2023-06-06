@@ -7,8 +7,12 @@ export default {
         return {
             store,
         }
-
-    }
+    },
+    methods: {
+        archSelectFunc(string) {
+            store.archSelect = string;
+        }
+    },
 }
 
 </script>
@@ -20,7 +24,11 @@ export default {
             Alien
         </button>
         <ul class="dropdown-menu">
-            <li v-for="item in store.archList"><a class="dropdown-item" href="#">{{ item.archetype_name }}</a></li>
+            <li v-for="(item, idx) in store.archList" :key="idx" @click="archSelectFunc(item.archetype_name)"
+                @click.prevent="$emit('archSelected')">
+                <a class=" dropdown-item" href="#">{{ item.archetype_name
+                }}</a>
+            </li>
         </ul>
     </div>
 </template>
