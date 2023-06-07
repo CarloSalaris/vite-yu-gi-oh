@@ -10,31 +10,37 @@ export default {
         }
     },
     methods: {
-        archSelectFunc(string) {
-            store.archSelect = string;
-        }
+        // archSelectFunc(string) {
+        //     store.archSelect = string;
+        // }
     },
 }
 
 </script>
 
 <template>
-    <div class="dropdown">
-        <button class="btn btn-secondary btn-sm dropdown-toggle my-3 bg-white text-black" type="button"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Select archetype...
-        </button>
-        <ul class="dropdown-menu">
-            <li @click="archSelectFunc(this.emptyString)" @click.prevent="$emit('archSelected')"><a class=" dropdown-item"
-                    href="#">All</a>
-            </li>
-            <li v-for="(item, idx) in store.archList" :key="idx" @click="archSelectFunc(item.archetype_name)"
-                @click.prevent="$emit('archSelected')">
-                <a class=" dropdown-item" href="#">{{ item.archetype_name
-                }}</a>
-            </li>
-        </ul>
-    </div>
+    <!-- <div class="dropdown">
+            <button class="btn btn-secondary btn-sm dropdown-toggle my-3 bg-white text-black" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Select archetype...
+            </button>
+            <ul class="dropdown-menu">
+                <li @click="archSelectFunc(this.emptyString)" @click.prevent="$emit('archSelected')"><a class=" dropdown-item"
+                        href="#">All</a>
+                </li>
+                <li v-for="(item, idx) in store.archList" :key="idx" @click="archSelectFunc(item.archetype_name)"
+                    @click.prevent="$emit('archSelected')">
+                    <a class=" dropdown-item" href="#">{{ item.archetype_name
+                    }}</a>
+                </li>
+            </ul>
+        </div> -->
+
+    <select name="archetypes" id="archetype-select" v-model="store.archSelect" @change="$emit('archSelected')">
+        <option value="">Select all</option>
+        <option v-for="(item, idx) in store.archList" :key="idx" :value="item.archetype_name">{{ item.archetype_name }}
+        </option>
+    </select>
 </template>
 
 <style lang="scss" scoped>
