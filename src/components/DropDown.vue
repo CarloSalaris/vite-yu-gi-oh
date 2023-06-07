@@ -19,6 +19,12 @@ export default {
 </script>
 
 <template>
+    <!-- MODEL FROM BOOTSTRAP -->
+
+    <!-- need to uncomment:
+        - methods: archSelectFunc(string)
+        - style: .dropdown-menu{} -->
+
     <!-- <div class="dropdown">
         <button class="btn btn-secondary btn-sm dropdown-toggle my-3 bg-white text-black" type="button"
             data-bs-toggle="dropdown" aria-expanded="false">
